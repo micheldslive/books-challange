@@ -1,3 +1,4 @@
+import NextImage from 'next/image'
 import styled, { css } from 'styled-components'
 import media from 'styled-media-query'
 
@@ -142,4 +143,9 @@ export const Description = styled.blockquote`
       overflow-y: scroll;
     `}
   `}
+`
+
+export const Image = styled(NextImage)`
+  max-width: inherit;
+  max-height: inherit;
 `

@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components'
+import NextImage from 'next/image'
 
 export const Wrapper = styled.div`
   ${({ theme }) => css`
@@ -90,4 +91,8 @@ export const InfoWrapper = styled.div`
     display: inline-flex;
     margin-top: 0.2rem;
   }
+`
+
+export const Image = styled(NextImage)`
+  max-width: 95px;
 `
