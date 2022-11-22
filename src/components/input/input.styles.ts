@@ -60,6 +60,7 @@ export const Input = styled.input`
 export const Label = styled.label`
   ${({ theme }) => css`
     position: absolute;
+    pointer-events: none;
     color: ${theme.colors.white};
     font-size: ${theme.font.sizes.lg};
     transform: translate(0, 0) scale(1);

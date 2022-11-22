@@ -4,10 +4,9 @@ import {
   DefaultTheme,
   GlobalStyleComponent,
 } from 'styled-components'
-import theme from './theme'
+import { StyleProps } from '@/core/types'
 
-type GlobalStyleProps = {
-  theme?: typeof theme
+interface GlobalStyleProps extends StyleProps {
   noBackground?: boolean
 }
 

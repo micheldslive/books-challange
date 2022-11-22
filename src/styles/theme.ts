@@ -1,4 +1,4 @@
-export default {
+export const theme = {
   border: {
     radius: {
       md: '0.4rem',
