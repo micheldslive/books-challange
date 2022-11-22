@@ -8,7 +8,7 @@ import theme from './theme'
 
 type GlobalStyleProps = {
   theme?: typeof theme
-  removeBg?: boolean
+  noBackground?: boolean
 }
 
 const GlobalStyles: GlobalStyleComponent<
@@ -21,7 +21,7 @@ const GlobalStyles: GlobalStyleComponent<
     font-display: swap;
     font-weight: 400;
     src: local('Hebbo Regular'),
-          url('/fonts/heebo-v12-latin-regular.woff2') format('woff2');
+          url('/fonts/heebo-regular.woff2') format('woff2');
   }
 
   @font-face {
@@ -30,7 +30,7 @@ const GlobalStyles: GlobalStyleComponent<
     font-display: swap;
     font-weight: 500;
     src: local('Hebbo Medium'),
-          url('/fonts/heebo-v12-latin-500.woff2') format('woff2');
+          url('/fonts/heebo-500.woff2') format('woff2');
   }
 
   * {
@@ -61,7 +61,7 @@ const GlobalStyles: GlobalStyleComponent<
   }
 
 
-  ${({ theme, removeBg }) => css`
+  ${({ theme, noBackground }) => css`
     html {
       font-size: 62.5%;
     }
@@ -83,7 +83,7 @@ const GlobalStyles: GlobalStyleComponent<
       font-weight: ${theme.font.weight.bold};
     }
 
-    ${!removeBg &&
+    ${!noBackground &&
     css`
       background-color: ${theme.colors.black};
     `}

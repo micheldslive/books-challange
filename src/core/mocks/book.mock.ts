@@ -1,6 +1,6 @@
 export const book = {
   id: '61c9c28fcc',
-  imageUrl: '/img/book-placeholder.webp',
+  imageUrl: 'https://i.postimg.cc/15skvdVc/book-placeholder.jpg',
   title: 'Aut',
   authors: ['Hugo Moraes'],
   pageCount: 1420,

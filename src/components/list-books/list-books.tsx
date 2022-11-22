@@ -1,7 +1,6 @@
 import { Fragment, useState } from 'react'
 import { BookProps } from '@/core/types'
 import { fullBook } from '@/core/mocks'
-import CloseIcon from '@/public/icons/close-icon.svg'
 
 import { Card, FullCard, Modal } from '@/components'
 import * as S from './list-books.styles'
@@ -35,7 +34,18 @@ export const ListBooks = ({ books }: ListBooksProps) => {
           aria-label='Fechar modal'
           onClick={() => setOpen(false)}
         >
-          <CloseIcon />
+          <svg
+            fill='none'
+            xmlns='http://www.w3.org/2000/svg'
+            viewBox='0 0 16 16'
+          >
+            <path
+              d='m12.035 4.507.036-.036-.036-.035-.471-.471-.035-.036-.036.036L8 7.458 4.507 3.965l-.036-.036-.035.036-.471.471-.036.035.036.036L7.458 8l-3.493 3.493-.036.036.036.035.471.471.035.036.036-.036L8 8.542l3.493 3.493.036.036.035-.036.471-.471.036-.035-.036-.036L8.542 8l3.493-3.493Z'
+              fill='currentColor'
+              stroke='currentColor'
+              strokeWidth='.1'
+            />
+          </svg>
         </S.CloseButton>
         <FullCard {...content} />
       </Modal>

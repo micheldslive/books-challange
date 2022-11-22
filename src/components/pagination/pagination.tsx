@@ -2,8 +2,6 @@ import { useEffect } from 'react'
 import { PaginationProps } from '@/core/types'
 import * as S from './pagination.styles'
 import { useBooks } from '@/core/zustand'
-import NextIcon from '@/public/icons/next-icon.svg'
-import PrevIcon from '@/public/icons/prev-icon.svg'
 
 export const Pagination = ({
   page,
@@ -33,7 +31,9 @@ export const Pagination = ({
         onClick={onPrevPage}
         aria-label='Voltar'
       >
-        <NextIcon />
+        <svg viewBox='0 0 6 10' fill='none' xmlns='http://www.w3.org/2000/svg'>
+          <path d='M1 1L5 5L1 9' stroke='currentColor' strokeLinejoin='round' />
+        </svg>
       </S.Button>
 
       <S.Button
@@ -43,7 +43,9 @@ export const Pagination = ({
         onClick={onNextPage}
         aria-label='Avançar'
       >
-        <PrevIcon />
+        <svg viewBox='0 0 6 10' fill='none' xmlns='http://www.w3.org/2000/svg'>
+          <path d='M1 1L5 5L1 9' stroke='currentColor' strokeLinejoin='round' />
+        </svg>
       </S.Button>
     </S.Wrapper>
   )

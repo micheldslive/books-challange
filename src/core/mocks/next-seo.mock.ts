@@ -8,7 +8,7 @@ export const SEO = {
     title: 'Ioasys Books | Front-End Challange',
     images: [
       {
-        url: 'https://books-challenge-micode.vercel.app/img/ioasys-open-graph.png',
+        url: 'https://books-challenge-micode.vercel.app/img/ioasys-og.png',
         width: 2560,
         height: 1440,
         alt: 'Ioasys Books',

@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import * as S from './card.styles'
 
 import { BookProps } from '@/core/types'
@@ -20,7 +19,7 @@ export const Card = ({
   <S.Wrapper onClick={onClick}>
     <S.ImageWrapper>
       {imageUrl ? (
-        <Image src={imageUrl} alt={title} layout='fill' objectFit='contain' />
+        <S.Image src={imageUrl} alt={title} layout='fill' objectFit='contain' />
       ) : (
         <S.ImagePlaceHolder>{title}</S.ImagePlaceHolder>
       )}

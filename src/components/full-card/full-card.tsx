@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import * as S from './full-card.styles'
 
 import { BookProps } from '@/core/types'
@@ -30,7 +29,7 @@ export const FullCard = ({
     <S.Wrapper>
       {!!imageUrl && (
         <S.ImageWrapper>
-          <Image
+          <S.Image
             src={imageUrl}
             alt={title}
             layout='fill'
