@@ -11,8 +11,6 @@ export const Login = () => {
   const { error, signIn } = useUsers()
 
   const onSubmit: SubmitHandler<SignInData> = async (data) => {
-    console.log(data)
-
     await signIn(data)
   }
 

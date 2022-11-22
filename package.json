@@ -14,7 +14,7 @@
     "test:watch": "yarn test --watch",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "startbook": "build-storybook -c .storybook -o ./public"
+    "startbook": "build-storybook -c .storybook -o .startbook"
   },
   "lint-staged": {
     "src/**/*": [
