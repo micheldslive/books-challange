@@ -10,6 +10,7 @@ module.exports = {
       'localhost',
       'files-books.ioasys.com.br',
       'd2drtqy2ezsot0.cloudfront.net',
+      'i.postimg.cc',
     ],
   },
   webpack(config) {
