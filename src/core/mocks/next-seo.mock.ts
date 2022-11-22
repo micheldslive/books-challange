@@ -15,7 +15,7 @@ export const SEO = {
       },
     ],
   },
-  twitter: {
+  instagram: {
     handle: '@micheldslive',
     site: '@site',
     cardType: 'summary_large_image',
