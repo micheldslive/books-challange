@@ -1,6 +1,6 @@
 import { screen } from '@testing-library/react'
 import { renderWithTheme } from '@/core/utils/tests/helpers'
-import theme from '@/styles/theme'
+import { theme } from '@/styles/theme'
 
 import { Logo } from '.'
 

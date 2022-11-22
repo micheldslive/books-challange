@@ -2,7 +2,7 @@ import { RouterContext } from 'next/dist/shared/lib/router-context'
 
 import { ThemeProvider } from 'styled-components'
 import GlobalStyles from 'styles/globals'
-import theme from 'styles/theme'
+import { theme } from 'styles/theme'
 import '../.jest/next-image'
 
 export const parameters = {

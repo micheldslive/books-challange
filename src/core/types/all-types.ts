@@ -1,4 +1,5 @@
 import { ButtonHTMLAttributes } from 'react'
+import { theme } from '@/styles/theme'
 
 type ButtonTypes = ButtonHTMLAttributes<HTMLButtonElement>
 
@@ -7,9 +8,13 @@ export type ButtonProps = {
 } & ButtonTypes
 
 export type LogoProps = {
-  color?: string
+  color?: 'black' | 'white'
 }
 
 export type TooltipProps = {
   error: string
+}
+
+export interface StyleProps {
+  theme: typeof theme
 }

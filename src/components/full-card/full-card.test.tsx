@@ -1,5 +1,5 @@
 import { renderWithTheme } from '@/core/utils/tests/helpers'
-import theme from '@/styles/theme'
+import { theme } from '@/styles/theme'
 
 import { fullBook } from '@/core/mocks'
 import { FullCard } from '.'

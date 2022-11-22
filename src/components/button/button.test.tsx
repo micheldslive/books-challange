@@ -1,5 +1,5 @@
 import { screen } from '@testing-library/react'
-import theme from '@/styles/theme'
+import { theme } from '@/styles/theme'
 
 import { Button } from '.'
 import { renderWithTheme } from '@/core/utils/tests/helpers'
