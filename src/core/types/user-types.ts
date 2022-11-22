@@ -27,6 +27,8 @@ export type useAuthProps = {
   setUser(user: UserProps | undefined): void
   error: string
   setError(error: string): void
+  loading: boolean
+  setLoading(loading: boolean): void
   signIn(userData: SignInData): Promise<void>
   signOut(): Promise<void>
 }
