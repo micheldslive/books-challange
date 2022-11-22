@@ -16,12 +16,10 @@ export type SignInData = {
 
 export type InputProps = {
   button?: string
-  initialValue?: string
   label?: string
   name: FieldName<SignInData>
   onClick?: () => void
   register: UseFormRegister<SignInData>
-  onInputChange?: (value: string) => void
 } & InputHTMLAttributes<HTMLInputElement>
 
 export type useAuthProps = {
