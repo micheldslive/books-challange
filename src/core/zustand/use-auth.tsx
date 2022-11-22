@@ -29,7 +29,19 @@ const useAuth = create<useAuthProps>((set) => ({
       error,
     })),
 
+  loading: false,
+  setLoading: (loading) =>
+    set((state) => ({
+      ...state,
+      loading,
+    })),
+
   signIn: async ({ email, password }: SignInData) => {
+    set((state) => ({
+      ...state,
+      loading: true,
+    }))
+
     await api
       .post('/auth/sign-in', {
         email,
@@ -63,7 +75,6 @@ const useAuth = create<useAuthProps>((set) => ({
         api.defaults.headers.common['Authorization'] = `Bearer ${token}`
 
         router.push('/books')
-        return response
       })
       .catch((axiosError: AxiosError & AxiosErrorProps) => {
         if (axiosError.response?.status === 401) {
@@ -88,6 +99,11 @@ const useAuth = create<useAuthProps>((set) => ({
           }))
         }
       })
+
+    set((state) => ({
+      ...state,
+      loading: false,
+    }))
   },
 
   signOut: async () => {
@@ -99,7 +115,7 @@ const useAuth = create<useAuthProps>((set) => ({
 }))
 
 const useUsers = () => {
-  const { error, user, setUser, signIn, signOut } = useAuth()
+  const { error, user, setUser, signIn, signOut, loading } = useAuth()
 
   useEffect(() => {
     const { '@ioasys:token': token, '@ioasys:user': user } = parseCookies()
@@ -117,6 +133,7 @@ const useUsers = () => {
     signOut,
     error,
     user,
+    loading,
   }
 }
 
