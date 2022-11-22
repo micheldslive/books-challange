@@ -1,9 +1,9 @@
 <h1 align="center">
-  🌈 WEATHER CHALLENGE
+  📚 BOOKS CHALLENGE
 </h1>
 
 <p align="center">
-  <img alt="Weather" src="https://img.shields.io/static/v1?label=weather&message=challenge&color=success&labelColor=grey">
+  <img alt="Books" src="https://img.shields.io/static/v1?label=books&message=challenge&color=success&labelColor=grey">
   
   <img alt="Next" src="https://img.shields.io/static/v1?label=stack&message=nextjs&color=success&labelColor=grey">
   
@@ -116,7 +116,7 @@ yarn test
 ```
 ---
 
-## Desenvolvedor<br>
+## 💻 Desenvolvedor<br>
 
 <table>
   <tr>
