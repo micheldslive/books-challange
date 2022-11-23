@@ -1,13 +1,12 @@
-import { screen } from '@testing-library/react'
 import { renderWithTheme } from '@/core/utils/tests/helpers'
 
 import { Tooltip } from '.'
 
 describe('<Tooltip />', () => {
   it('should render correctly', () => {
-    const { container } = renderWithTheme(<Tooltip error='Error' />)
+    const { container, getByText } = renderWithTheme(<Tooltip error='Error' />)
 
-    expect(screen.getByText('Error')).toBeInTheDocument()
+    expect(getByText('Error')).toBeInTheDocument()
     expect(container.firstChild).toMatchSnapshot()
   })
 })

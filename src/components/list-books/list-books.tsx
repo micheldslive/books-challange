@@ -28,7 +28,7 @@ export const ListBooks = ({ books }: ListBooksProps) => {
         ))}
       </S.Grid>
 
-      <Modal isOpen={open}>
+      <Modal open={open}>
         <S.CloseButton
           role='button'
           aria-label='Fechar modal'

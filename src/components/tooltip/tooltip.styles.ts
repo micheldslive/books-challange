@@ -1,8 +1,5 @@
 import styled, { css, keyframes } from 'styled-components'
-
-type WrapperProps = {
-  active: boolean
-}
+import { WrapperProps } from '@/core/types'
 
 const fadeIn = keyframes`
   from {

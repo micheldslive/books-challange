@@ -1,4 +1,4 @@
-import { fireEvent, screen } from '@testing-library/react'
+import { fireEvent } from '@testing-library/react'
 import { renderWithTheme } from '@/core/utils/tests/helpers'
 
 import { Pagination } from '.'
@@ -16,12 +16,12 @@ const render = () => renderWithTheme(<Pagination {...pagination} />)
 
 describe('<Pagination />', () => {
   it('should render correctly', () => {
-    const { getByLabelText } = render()
+    const { getByLabelText, getByText } = render()
 
     const button = getByLabelText('Avançar')
     expect(button).toBeInTheDocument()
 
-    expect(screen.getByText(/página/i)).toBeInTheDocument()
+    expect(getByText(/página/i)).toBeInTheDocument()
   })
 
   it('should render a button to advance to next page and call the method if clicked', () => {
