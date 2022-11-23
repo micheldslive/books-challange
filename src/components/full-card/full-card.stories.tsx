@@ -9,7 +9,7 @@ export default {
 } as Meta
 
 export const Default: Story<FullCardProps> = (args) => (
-  <div style={{ width: '100%', maxWidth: 760 }}>
+  <div style={{ width: '100%', maxWidth: 780, paddingTop: 20 }}>
     <FullCard {...args} />
   </div>
 )

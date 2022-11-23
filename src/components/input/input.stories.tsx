@@ -12,13 +12,18 @@ export default {
   },
 } as Meta
 
-export const Default: Story<InputProps> = (args) => {
+const ParseRegister = (args: InputProps) => {
   const { register } = useForm<SignInData>()
   const newArgs = { ...args, register }
+  return newArgs
+}
+
+export const Default: Story<InputProps> = (args) => {
+  const returnedArgs = ParseRegister(args)
 
   return (
     <div style={{ maxWidth: 540 }}>
-      <Input {...newArgs} />
+      <Input {...returnedArgs} />
     </div>
   )
 }
@@ -31,12 +36,11 @@ Default.args = {
 }
 
 export const WithButton: Story<InputProps> = (args) => {
-  const { register } = useForm<SignInData>()
-  const newArgs = { ...args, register }
+  const returnedArgs = ParseRegister(args)
 
   return (
     <div style={{ maxWidth: 540 }}>
-      <Input {...newArgs} />
+      <Input {...returnedArgs} />
     </div>
   )
 }
