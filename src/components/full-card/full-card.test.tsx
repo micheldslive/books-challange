@@ -4,9 +4,9 @@ import { theme } from '@/styles/theme'
 import { fullBook } from '@/core/mocks'
 import { FullCard } from '.'
 
-const render = () => renderWithTheme(<FullCard {...fullBook} />)
-
 describe('<FullCard />', () => {
+  const render = () => renderWithTheme(<FullCard {...fullBook} />)
+
   it('should render the full card correctly', () => {
     const { getByRole } = render()
 

@@ -1,10 +1,7 @@
 import styled, { css } from 'styled-components'
 import media from 'styled-media-query'
 import { transparentize } from 'polished'
-
-type ModalProps = {
-  isOpen: boolean
-}
+import { ModalProps } from '@/core/types'
 
 const modalModifiers = {
   open: () => css`
@@ -18,7 +15,7 @@ const modalModifiers = {
 }
 
 export const Wrapper = styled.div<ModalProps>`
-  ${({ theme, isOpen }) => css`
+  ${({ theme, open }) => css`
     align-items: center;
     background: ${transparentize(0.1, theme.colors.black)};
     display: flex;
@@ -35,8 +32,8 @@ export const Wrapper = styled.div<ModalProps>`
       overflow-x: hidden;
     `}
 
-    ${isOpen && modalModifiers.open()}
-    ${!isOpen && modalModifiers.close()}
+    ${open && modalModifiers.open()}
+    ${!open && modalModifiers.close()}
   `}
 `
 

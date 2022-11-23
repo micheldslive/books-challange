@@ -1,13 +1,9 @@
+import { ChildrenProps, ModalProps } from '@/core/types'
 import * as S from './modal.styles'
 
-export type ModalProps = {
-  children: React.ReactNode
-  isOpen: boolean
-}
-
-export const Modal = ({ children, isOpen }: ModalProps) => {
+export const Modal = ({ children, open }: ModalProps & ChildrenProps) => {
   return (
-    <S.Wrapper isOpen={isOpen} aria-label='modal' aria-hidden={!isOpen}>
+    <S.Wrapper open={open} aria-label='modal' aria-hidden={!open}>
       <S.Content>{children}</S.Content>
     </S.Wrapper>
   )

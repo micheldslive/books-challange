@@ -1,4 +1,4 @@
-import { screen, waitFor } from '@testing-library/react'
+import { waitFor } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { renderWithTheme } from '@/core/utils/tests/helpers'
 
@@ -27,35 +27,33 @@ describe('<Input />', () => {
     )
 
   it('should render with label', () => {
-    render()
+    const { getByText } = render()
 
-    expect(screen.getByText('E-mail')).toBeInTheDocument()
+    expect(getByText('E-mail')).toBeInTheDocument()
   })
 
   it('should render without label', () => {
-    render()
+    const { queryByLabelText } = render()
 
-    expect(screen.queryByLabelText('E-mail')).not.toBeInTheDocument()
+    expect(queryByLabelText('E-mail')).not.toBeInTheDocument()
   })
 
   it('should render with placeholder', () => {
-    render()
+    const { getByPlaceholderText } = render()
 
-    expect(
-      screen.getByPlaceholderText('micheldslive@gmail.com'),
-    ).toBeInTheDocument()
+    expect(getByPlaceholderText('micheldslive@gmail.com')).toBeInTheDocument()
   })
 
   it('should render with a button', () => {
-    render()
+    const { getByRole } = render()
 
-    expect(screen.getByRole('button', { name: /Entrar/i })).toBeInTheDocument()
+    expect(getByRole('button', { name: /Entrar/i })).toBeInTheDocument()
   })
 
   it('should change value when typing', async () => {
-    render()
+    const { getByLabelText } = render()
 
-    const input = screen.getByLabelText('email')
+    const input = getByLabelText('email')
     const email = 'micheldslive@gmail.com'
     userEvent.type(input, email)
 

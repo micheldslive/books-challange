@@ -1,6 +1,10 @@
 import { ButtonHTMLAttributes } from 'react'
 import { theme } from '@/styles/theme'
 
+export type ChildrenProps = {
+  children: React.ReactNode
+}
+
 type ButtonTypes = ButtonHTMLAttributes<HTMLButtonElement>
 
 export type ButtonProps = {
@@ -17,4 +21,12 @@ export type TooltipProps = {
 
 export interface StyleProps {
   theme: typeof theme
+}
+
+export type ModalProps = {
+  open: boolean
+}
+
+export type WrapperProps = {
+  active: boolean
 }
