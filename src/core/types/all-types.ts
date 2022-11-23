@@ -25,6 +25,7 @@ export interface StyleProps {
 
 export type ModalProps = {
   open: boolean
+  close?(): void
 }
 
 export type WrapperProps = {
