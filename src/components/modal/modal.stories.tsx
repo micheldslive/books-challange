@@ -7,6 +7,13 @@ import { fullBook } from '@/core/mocks'
 export default {
   title: 'Modal/Default',
   component: Modal,
+  argTypes: {
+    close: {
+      table: {
+        disable: true,
+      },
+    },
+  },
   parameters: {
     layout: 'centered',
   },

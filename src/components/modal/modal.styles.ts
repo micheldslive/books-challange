@@ -17,7 +17,6 @@ const modalModifiers = {
 export const Wrapper = styled.div<ModalProps>`
   ${({ theme, open }) => css`
     align-items: center;
-    background: ${transparentize(0.1, theme.colors.black)};
     display: flex;
     height: 100%;
     justify-content: center;
@@ -37,12 +36,26 @@ export const Wrapper = styled.div<ModalProps>`
   `}
 `
 
+export const Overlay = styled.div`
+  ${({ theme }) => css`
+    background: ${transparentize(0.1, theme.colors.black)};
+    height: 100%;
+    justify-content: center;
+    position: fixed;
+    left: 0;
+    top: 0;
+    transition: opacity 250ms ease-in;
+    width: 100%;
+  `}
+`
+
 export const Content = styled.div`
   ${({ theme }) => css`
     max-width: 72rem;
     margin: ${theme.spacings.sm};
     margin-top: 24rem;
     width: 100%;
+    z-index: ${theme.layers.modal};
 
     ${media.greaterThan('medium')`
       margin-top: 0;

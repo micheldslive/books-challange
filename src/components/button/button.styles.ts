@@ -13,7 +13,7 @@ export const ButtonWrapper = styled.button`
     font-size: ${theme.font.sizes.lg};
     font-weight: ${theme.font.weight.bold};
     height: 3.6rem;
-    min-width: 8rem;
+    min-width: 92px;
     padding: 0 ${theme.spacings.sm};
     transition: all 250ms ease-in-out;
 
