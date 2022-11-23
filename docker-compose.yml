@@ -3,12 +3,12 @@ version: "3"
 services:
   web:
     build: .
-    container_name: iosasys
+    container_name: books-challenge
     restart: always
     volumes:
       - ./:/books
     ports:
-      - 5173:5173
+      - 3000:3000
     command:
       - /bin/sh
       - -c
@@ -17,7 +17,7 @@ services:
 
   book:
     build: .
-    container_name: iosasys-book
+    container_name: books-challenge-story
     restart: always
     volumes:
       - ./:/books
