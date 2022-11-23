@@ -22,7 +22,7 @@ Projeto realizado para teste de Front-End. O objetivo da aplicação é criar um
 </p>
 
 ---
-O projeto está disponível para visualização em https://books-challenge-micode.vercel.app.
+O projeto está disponível para visualização em https://books-challenge-micode.vercel.app. <br>
 A documentação dos componentes está disponível para visualização em https://books-challenge-storybook.vercel.app.
 
 
