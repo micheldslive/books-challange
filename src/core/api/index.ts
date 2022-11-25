@@ -18,9 +18,7 @@ const getAPIClient = (
   api.interceptors.request.use((config: AxiosRequestConfig) => config)
 
   if (cookies)
-    api.defaults.headers.common[
-      'Authorization'
-    ] = `Bearer ${cookies['@ioasys:token']}`
+    api.defaults.headers.common.Authorization = `Bearer ${cookies['@ioasys:token']}`
 
   return api
 }

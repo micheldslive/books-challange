@@ -1,5 +1,5 @@
 import create from 'zustand'
-import { parseCookies } from 'nookies'
+import { parseCookies, destroyCookie, setCookie } from 'nookies'
 import { useEffect } from 'react'
 import {
   AxiosErrorProps,
@@ -9,7 +9,6 @@ import {
 } from '@/core/types'
 import { api } from '@/core/api'
 import { AxiosError, AxiosResponse } from 'axios'
-import { destroyCookie, setCookie } from 'nookies'
 import router from 'next/router'
 
 const MAX_AGE = Number(process.env.MAX_AGE)
@@ -72,7 +71,7 @@ const useAuth = create<useAuthProps>((set) => ({
           user,
         }))
 
-        api.defaults.headers.common['Authorization'] = `Bearer ${token}`
+        api.defaults.headers.common.Authorization = `Bearer ${token}`
 
         router.push('/books')
       })
@@ -121,7 +120,7 @@ const useUsers = () => {
     const { '@ioasys:token': token, '@ioasys:user': user } = parseCookies()
 
     if (token) {
-      api.defaults.headers.common['Authorization'] = `Bearer ${token}`
+      api.defaults.headers.common.Authorization = `Bearer ${token}`
       const parseUser = JSON.parse(user)
       setUser(parseUser)
       router.push('/books')
