@@ -12,9 +12,9 @@ describe('<Button />', () => {
     const fontSize = theme.font.sizes.lg
 
     expect(screen.getByRole('button', { name: /entrar/i })).toHaveStyle({
-      color: color,
+      color,
       height: '3.6rem',
-      fontSize: fontSize,
+      fontSize,
     })
 
     expect(container.firstChild).toMatchSnapshot()
