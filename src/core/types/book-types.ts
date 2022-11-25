@@ -12,6 +12,10 @@ export type BookProps = {
   published: number
 }
 
+export interface Paginations {
+  page: number
+  totalPages: number
+}
 export interface useBooksProps extends Paginations {
   books: BookProps[]
   setBooks(books: BookProps[]): void
@@ -22,11 +26,6 @@ export interface useBooksProps extends Paginations {
   setPage(page: number): void
   setTotalPages(totalPages: number): void
   getData(page: number): void
-}
-
-export interface Paginations {
-  page: number
-  totalPages: number
 }
 
 export interface PaginationProps extends Paginations {
