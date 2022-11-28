@@ -1,19 +1,20 @@
 import { AppProps } from 'next/app'
 import Head from 'next/head'
-
 import { theme } from '@/styles/theme'
 import GlobalStyles from '@/styles/globals'
 import { ThemeProvider } from 'styled-components'
-
 import { DefaultSeo } from 'next-seo'
 import { SEO } from '@/core/mocks'
-
 import { AnimatePresence, motion } from 'framer-motion'
 import { useRouter } from 'next/router'
 import NextNProgress from 'nextjs-progressbar'
+import { QueryClient, QueryClientProvider } from 'react-query'
+import { ReactQueryDevtools } from 'react-query/devtools'
 
 const App = ({ Component, pageProps }: AppProps) => {
   const { route } = useRouter()
+
+  const queryClient = new QueryClient()
 
   return (
     <ThemeProvider theme={theme}>
@@ -34,7 +35,10 @@ const App = ({ Component, pageProps }: AppProps) => {
           exit={{ opacity: 1 }}
         >
           <NextNProgress color='#E35E9B' />
-          <Component {...pageProps} />
+          <QueryClientProvider client={queryClient}>
+            <Component {...pageProps} />
+            {/* <ReactQueryDevtools initialIsOpen /> */}
+          </QueryClientProvider>
         </motion.div>
       </AnimatePresence>
     </ThemeProvider>

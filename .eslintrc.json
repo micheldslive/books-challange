@@ -30,6 +30,7 @@
     }
   ],
   "rules": {
+    "no-useless-constructor":"off",
     "comma-dangle": [
       "error",
       {

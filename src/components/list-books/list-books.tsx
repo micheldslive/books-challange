@@ -21,7 +21,7 @@ export const ListBooks = ({ books }: ListBooksProps) => {
   return (
     <>
       <S.Grid>
-        {books.map((book) => (
+        {books?.map((book) => (
           <Fragment key={book.id.toString()}>
             <Card onClick={() => handleOpenModal(book)} {...book} />
           </Fragment>

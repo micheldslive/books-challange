@@ -1,6 +1,6 @@
 import { Story, Meta } from '@storybook/react'
 import { Input } from '.'
-import { InputProps, SignInData } from '@/core/types'
+import { InputProps, SignInParams } from '@/core/types'
 import { useForm } from 'react-hook-form'
 
 export default {
@@ -13,7 +13,7 @@ export default {
 } as Meta
 
 const ParseRegister = (args: InputProps) => {
-  const { register } = useForm<SignInData>()
+  const { register } = useForm<SignInParams>()
   const newArgs = { ...args, register }
   return newArgs
 }

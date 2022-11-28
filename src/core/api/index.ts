@@ -1,10 +1,7 @@
 import axios, { AxiosRequestConfig } from 'axios'
-import { NextPageContext } from 'next'
 import { parseCookies } from 'nookies'
 
-const getAPIClient = (
-  ctx?: Pick<NextPageContext, 'req'> | { req: unknown } | null | undefined,
-) => {
+const getAPIClient = (ctx?: { req: unknown } | null) => {
   const cookies = parseCookies(ctx)
   const baseURL = process.env.BASE_URL
 

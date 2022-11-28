@@ -1,6 +1,6 @@
 import { waitFor } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
-import { renderWithTheme } from '@/core/utils/tests/helpers'
+import { renderWithTheme } from '@/core/utils/tests'
 
 import { Input } from '.'
 

@@ -1,6 +1,6 @@
 import * as S from './full-card.styles'
-
 import { BookProps } from '@/core/types'
+import { book } from '@/core/mocks/book.mock'
 
 export type FullCardProps = BookProps
 
@@ -27,18 +27,15 @@ export const FullCard = ({
 
   return (
     <S.Wrapper>
-      {!!imageUrl && (
-        <S.ImageWrapper>
-          <S.Image
-            src={imageUrl}
-            alt={title}
-            layout='fill'
-            objectFit='cover'
-            priority={true}
-          />
-        </S.ImageWrapper>
-      )}
-
+      <S.ImageWrapper>
+        <S.Image
+          width={240}
+          height={356}
+          src={imageUrl || book.imageUrl}
+          alt={title}
+          priority
+        />
+      </S.ImageWrapper>
       <S.Content>
         <S.MainInfoWrapper>
           <S.Title>{title}</S.Title>

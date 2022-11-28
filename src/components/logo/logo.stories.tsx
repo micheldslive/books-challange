@@ -8,6 +8,11 @@ export default {
   parameters: {
     layout: 'centered',
   },
+  argTypes: {
+    color: {
+      value: 'white',
+    },
+  },
 } as Meta
 
 export const Default: Story<LogoProps> = (args) => (
@@ -15,3 +20,7 @@ export const Default: Story<LogoProps> = (args) => (
     <Logo {...args} />
   </div>
 )
+
+Default.args = {
+  color: 'white',
+}

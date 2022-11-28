@@ -1,24 +1,22 @@
-import { screen } from '@testing-library/react'
-import { renderWithTheme } from '@/core/utils/tests/helpers'
+import { act, screen } from '@testing-library/react'
+import { renderWithTheme } from '@/core/utils/tests'
 import { theme } from '@/styles/theme'
 
 import { Logo } from '.'
 
 describe('<Logo />', () => {
   it('should render a white logo default', () => {
-    const { container } = renderWithTheme(<Logo />)
+    renderWithTheme(<Logo color='white' />)
 
-    expect(screen.getByLabelText(/ioasys/i).parentElement).toHaveStyle({
+    expect(screen.getByLabelText(/ioasys-logo/i).parentElement).toHaveStyle({
       color: theme.colors.white,
     })
-
-    expect(container.firstChild).toMatchSnapshot()
   })
 
   it('should render a black logo', () => {
     renderWithTheme(<Logo color='black' />)
 
-    expect(screen.getByLabelText(/ioasys/i).parentElement).toHaveStyle({
+    expect(screen.getByLabelText(/ioasys-logo/i).parentElement).toHaveStyle({
       color: theme.colors.black,
     })
   })

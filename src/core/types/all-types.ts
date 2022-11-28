@@ -9,6 +9,7 @@ type ButtonTypes = ButtonHTMLAttributes<HTMLButtonElement>
 
 export type ButtonProps = {
   children: React.ReactNode
+  isLoading?: boolean
 } & ButtonTypes
 
 export type LogoProps = {

@@ -1,4 +1,4 @@
-import { renderWithTheme } from '@/core/utils/tests/helpers'
+import { renderWithTheme } from '@/core/utils/tests'
 import { theme } from '@/styles/theme'
 
 import { Card } from '.'
