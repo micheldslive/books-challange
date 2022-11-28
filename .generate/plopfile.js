@@ -6,7 +6,6 @@ module.exports = (plop) => {
         type: "input",
         name: "name",
         message: "What is your component name?",
-        description: "Descricao",
       },
     ],
     actions: [
