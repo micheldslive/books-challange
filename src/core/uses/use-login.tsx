@@ -8,7 +8,7 @@ import { setCookie } from '@/core/utils/cookies'
 import { api } from '@/core/api'
 
 export const useLogin = () => {
-  const { push } = useRouter()
+  const router = useRouter()
   const { signIn, signOut, error, setError, data } = useLoginStore()
   const remoteAuth = new RemoteAuth('/auth/sign-in', new PostClient())
 
@@ -29,7 +29,7 @@ export const useLogin = () => {
 
       api.defaults.headers.common.Authorization = `Bearer ${token}`
 
-      push('/books')
+      router.push('/books')
     },
     {
       onError: ({ response }: AxiosErrorProps) => {
