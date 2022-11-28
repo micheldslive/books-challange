@@ -1,18 +1,12 @@
 import { Input, Logo, Tooltip } from '@/components'
-import { SubmitHandler, useForm } from 'react-hook-form'
-
-import { useUsers } from '@/core/zustand'
+import { useForm } from 'react-hook-form'
+import { SignInParams } from '@/core/types'
+import { useLogin } from '@/core/uses'
 import * as S from './login.styles'
-import { SignInData } from '@/core/types'
 
 export const Login = () => {
-  const { register, handleSubmit } = useForm<SignInData>()
-
-  const { error, signIn } = useUsers()
-
-  const onSubmit: SubmitHandler<SignInData> = async (data) => {
-    await signIn(data)
-  }
+  const { register, handleSubmit } = useForm<SignInParams>()
+  const { mutate, error, isLoading } = useLogin()
 
   return (
     <S.Wrapper>
@@ -21,7 +15,7 @@ export const Login = () => {
           <Logo />
         </S.LogoContainer>
 
-        <S.Form onSubmit={handleSubmit(onSubmit)}>
+        <S.Form onSubmit={handleSubmit((data) => mutate(data))}>
           <Input
             type='email'
             name='email'
@@ -35,6 +29,7 @@ export const Login = () => {
             label='Senha'
             placeholder=' '
             button='Entrar'
+            isLoading={isLoading}
             register={register}
           />
           {!!error && <Tooltip error={error} />}

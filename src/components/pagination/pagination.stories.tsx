@@ -22,6 +22,9 @@ export const Default: Story<PaginationProps> = (args) => (
 )
 
 Default.args = {
-  page: 1,
-  totalPages: 10,
+  books: {
+    data: undefined,
+    page: 1,
+    totalPages: 42,
+  },
 }

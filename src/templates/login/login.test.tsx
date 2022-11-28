@@ -1,9 +1,19 @@
-import { renderWithTheme } from '@/core/utils/tests/helpers'
-
+import { renderWithTheme } from '@/core/utils/tests'
 import { Login } from '.'
+import { QueryClient, QueryClientProvider } from 'react-query'
+
+jest.mock('next/router', () => ({
+  useRouter: jest.fn(),
+}))
 
 describe('<Login />', () => {
-  const render = () => renderWithTheme(<Login />)
+  const queryClient = new QueryClient()
+  const render = () =>
+    renderWithTheme(
+      <QueryClientProvider client={queryClient}>
+        <Login />
+      </QueryClientProvider>,
+    )
 
   it('should render form', () => {
     const { getByLabelText, getByRole } = render()
@@ -16,6 +26,6 @@ describe('<Login />', () => {
   it('should render a logo', () => {
     const { getByLabelText } = render()
 
-    expect(getByLabelText(/ioasys logo/i)).toBeInTheDocument()
+    expect(getByLabelText(/ioasys-logo/i)).toBeInTheDocument()
   })
 })

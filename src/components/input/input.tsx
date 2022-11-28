@@ -8,6 +8,7 @@ export const Input = ({
   name,
   value,
   register,
+  isLoading,
   ...props
 }: InputProps) => {
   return (
@@ -15,14 +16,18 @@ export const Input = ({
       <S.InputWrapper>
         <S.Input
           {...props}
-          {...register(name)}
+          {...register(name, { required: true })}
           value={value}
           aria-label={name}
         />
         {label && <S.Label htmlFor={name}>{label}</S.Label>}
       </S.InputWrapper>
 
-      {button && <Button type='submit'>{button}</Button>}
+      {button && (
+        <Button type='submit' isLoading={isLoading}>
+          {button}
+        </Button>
+      )}
     </S.Wrapper>
   )
 }

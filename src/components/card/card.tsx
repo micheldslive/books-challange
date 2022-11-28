@@ -1,6 +1,6 @@
 import * as S from './card.styles'
-
 import { BookProps } from '@/core/types'
+import { book } from '@/core/mocks'
 
 export type CardProps = {
   onClick: () => void
@@ -18,11 +18,12 @@ export const Card = ({
 }: CardProps) => (
   <S.Wrapper onClick={onClick}>
     <S.ImageWrapper>
-      {imageUrl ? (
-        <S.Image src={imageUrl} alt={title} layout='fill' objectFit='contain' />
-      ) : (
-        <S.ImagePlaceHolder>{title}</S.ImagePlaceHolder>
-      )}
+      <S.Image
+        src={imageUrl || book.imageUrl}
+        alt={title}
+        width={95}
+        height={133}
+      />
     </S.ImageWrapper>
 
     <S.Content>

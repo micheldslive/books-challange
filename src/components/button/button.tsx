@@ -1,13 +1,10 @@
 import { ButtonProps } from '@/core/types'
-import { useUsers } from '@/core/zustand'
 import * as S from './button.styles'
 
-export const Button = ({ children, ...props }: ButtonProps) => {
-  const { loading } = useUsers()
-
+export const Button = ({ children, isLoading, ...props }: ButtonProps) => {
   return (
     <S.ButtonWrapper {...props}>
-      {loading ? <S.ButtonLoading /> : <span>{children}</span>}
+      {isLoading ? <S.ButtonLoading /> : <span>{children}</span>}
     </S.ButtonWrapper>
   )
 }
