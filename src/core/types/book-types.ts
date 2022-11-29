@@ -21,12 +21,17 @@ export interface useBooksProps extends Paginations {
   setTotalPages(totalPages: number): void
 }
 
-export interface useBooks extends Paginations {
+export interface getBooksProps extends Paginations {
   data: BookProps[] | undefined
 }
 
 export type PaginationProps = {
-  books: useBooks
+  books: getBooksProps
   handleNextPage(): void
   handlePrevPage(): void
+}
+
+export type BooksParams = {
+  page: number
+  amount?: number
 }

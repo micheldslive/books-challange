@@ -2,14 +2,14 @@ import { useQuery, useQueryClient } from 'react-query'
 import { RemoteAuth } from '@/core/services/auth'
 import { PostClient } from '@/core/services/post-client'
 import { useBooksStore } from '@/core/stores'
-import { BooksParams, HttpResponse } from '@/core/types'
+import { BooksParams, HttpResponse, getBooksProps } from '@/core/types'
 import { useCallback, useEffect } from 'react'
 
 export const useBooks = () => {
   const { page, setPage } = useBooksStore()
   const queryClient = useQueryClient()
 
-  const getBooks = useCallback(async (values: BooksParams) => {
+  const getBooks = useCallback(async (values: BooksParams): Promise<getBooksProps> => {
     const remoteAuth = new RemoteAuth('/books', new PostClient())
     const response: HttpResponse = await remoteAuth.get(values)
     const { data } = response

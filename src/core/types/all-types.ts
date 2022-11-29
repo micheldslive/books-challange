@@ -1,5 +1,7 @@
-import { ButtonHTMLAttributes } from 'react'
+import { ButtonHTMLAttributes, InputHTMLAttributes } from 'react'
 import { theme } from '@/styles/theme'
+import { SignInParams } from './user-types'
+import { FieldName, UseFormRegister } from 'react-hook-form'
 
 export type ChildrenProps = {
   children: React.ReactNode
@@ -8,9 +10,9 @@ export type ChildrenProps = {
 type ButtonTypes = ButtonHTMLAttributes<HTMLButtonElement>
 
 export type ButtonProps = {
-  children: React.ReactNode
   isLoading?: boolean
-} & ButtonTypes
+} & ButtonTypes &
+  ChildrenProps
 
 export type LogoProps = {
   color?: 'black' | 'white'
@@ -32,3 +34,12 @@ export type ModalProps = {
 export type WrapperProps = {
   active: boolean
 }
+
+export type InputProps = {
+  button?: string
+  label?: string
+  isLoading?: boolean
+  name: FieldName<SignInParams>
+  onClick?: () => void
+  register: UseFormRegister<SignInParams>
+} & InputHTMLAttributes<HTMLInputElement>
