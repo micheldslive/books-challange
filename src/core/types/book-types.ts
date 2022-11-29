@@ -26,7 +26,7 @@ export interface getBooksProps extends Paginations {
 }
 
 export type PaginationProps = {
-  books: getBooksProps
+  books?: getBooksProps
   handleNextPage(): void
   handlePrevPage(): void
 }
@@ -35,3 +35,11 @@ export type BooksParams = {
   page: number
   amount?: number
 }
+
+export type ListBooksProps = {
+  books?: BookProps[]
+}
+
+export type CardProps = {
+  onClick(): void
+} & Omit<BookProps, 'description' | 'isbn10' | 'isbn13' | 'language' | 'id'>
