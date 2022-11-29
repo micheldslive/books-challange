@@ -1,5 +1,5 @@
 import { RouterContext } from 'next/dist/shared/lib/router-context'
-
+import { themes } from '@storybook/theming'
 import { ThemeProvider } from 'styled-components'
 import GlobalStyles from 'styles/globals'
 import { theme } from 'styles/theme'
@@ -22,6 +22,9 @@ export const parameters = {
         value: theme.colors.black,
       },
     ],
+  },
+  docs: {
+    theme: themes.dark,
   },
 }
 
