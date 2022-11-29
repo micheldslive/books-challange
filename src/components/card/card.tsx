@@ -1,10 +1,6 @@
 import * as S from './card.styles'
-import { BookProps } from '@/core/types'
 import { book } from '@/core/mocks'
-
-export type CardProps = {
-  onClick: () => void
-} & Omit<BookProps, 'description' | 'isbn10' | 'isbn13' | 'language' | 'id'>
+import { CardProps } from '@/core/types'
 
 export const Card = ({
   authors,

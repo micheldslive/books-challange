@@ -1,6 +1,7 @@
 import { Story, Meta } from '@storybook/react/types-6-0'
-import { ListBooks, ListBooksProps } from '.'
+import { ListBooks } from '.'
 import { books } from '@/core/mocks'
+import { ListBooksProps } from '@/core/types'
 
 export default {
   title: 'Layout/ListBooks',

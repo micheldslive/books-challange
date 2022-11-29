@@ -2,8 +2,6 @@ import * as S from './full-card.styles'
 import { BookProps } from '@/core/types'
 import { book } from '@/core/mocks/book.mock'
 
-export type FullCardProps = BookProps
-
 export const FullCard = ({
   imageUrl,
   title,
@@ -15,7 +13,7 @@ export const FullCard = ({
   isbn10,
   isbn13,
   description,
-}: FullCardProps) => {
+}: BookProps) => {
   const lastAuthor = authors.length - 1
   const listAuthors = authors.map((author, index) =>
     index === lastAuthor ? (

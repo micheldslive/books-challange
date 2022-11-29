@@ -1,13 +1,9 @@
 import { Fragment, useState } from 'react'
-import { BookProps } from '@/core/types'
+import { BookProps, ListBooksProps } from '@/core/types'
 import { fullBook } from '@/core/mocks'
 
 import { Card, FullCard, Modal } from '@/components'
 import * as S from './list-books.styles'
-
-export type ListBooksProps = {
-  books: BookProps[]
-}
 
 export const ListBooks = ({ books }: ListBooksProps) => {
   const [open, setOpen] = useState<boolean>(false)

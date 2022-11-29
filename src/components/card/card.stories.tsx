@@ -1,6 +1,7 @@
 import { Story, Meta } from '@storybook/react'
-import { Card, CardProps } from '.'
+import { Card } from '.'
 import { book } from '@/core/mocks'
+import { CardProps } from '@/core/types'
 
 export default {
   title: 'Layout/Card',

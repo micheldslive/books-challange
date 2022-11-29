@@ -6,8 +6,8 @@ export default {
   title: 'Navigation/Pagination',
   component: Pagination,
   argTypes: {
-    onNextPage: { action: 'clicked' },
-    onPrevPage: { action: 'clicked' },
+    handleNextPage: { action: 'clicked' },
+    handlePrevPage: { action: 'clicked' },
   },
   parameters: {
     backgrounds: {
