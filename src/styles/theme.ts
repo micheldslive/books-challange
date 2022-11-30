@@ -12,6 +12,7 @@ export const theme = {
     black: '#333333',
     gray: '#999999',
     accent: '#AB2680',
+    pink: '#E35E9B',
   },
 
   font: {

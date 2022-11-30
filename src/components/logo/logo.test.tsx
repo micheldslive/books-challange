@@ -1,6 +1,6 @@
 import { act, screen } from '@testing-library/react'
 import { renderWithTheme } from '@/core/utils/tests'
-import { theme } from '@/styles/theme'
+import { theme } from '@/styles'
 
 import { Logo } from '.'
 

@@ -1,5 +1,5 @@
 import { ButtonHTMLAttributes, InputHTMLAttributes } from 'react'
-import { theme } from '@/styles/theme'
+import { theme } from '@/styles'
 import { SignInParams } from './user-types'
 import { FieldName, UseFormRegister } from 'react-hook-form'
 
@@ -43,3 +43,9 @@ export type InputProps = {
   onClick?: () => void
   register: UseFormRegister<SignInParams>
 } & InputHTMLAttributes<HTMLInputElement>
+
+export type LoadingProps = {
+  width: number
+  height: number
+  border?: number
+}
