@@ -1,16 +1,17 @@
-import {
+import styled, {
   createGlobalStyle,
   css,
   DefaultTheme,
   GlobalStyleComponent,
+  keyframes,
 } from 'styled-components'
-import { StyleProps } from '@/core/types'
+import { LoadingProps, StyleProps } from '@/core/types'
 
 interface GlobalStyleProps extends StyleProps {
   noBackground?: boolean
 }
 
-const GlobalStyles: GlobalStyleComponent<
+export const GlobalStyles: GlobalStyleComponent<
   GlobalStyleProps,
   DefaultTheme
 > = createGlobalStyle`
@@ -88,4 +89,31 @@ const GlobalStyles: GlobalStyleComponent<
     `}
   `}
 `
-export default GlobalStyles
+
+export const loadingSpin = keyframes`
+  0% {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+`
+
+export const LoadingContent = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`
+
+export const Loading = styled.span<LoadingProps>`
+  ${({ width, height, border }) => css`
+    border: ${border || 4}px rgba(0, 0, 0, 0.25) solid;
+    border-top: ${border || 4}px rgba(0, 0, 0, 1) solid;
+    border-radius: 50%;
+    -webkit-animation: ${loadingSpin} 0.6s infinite linear;
+    animation: ${loadingSpin} 0.6s infinite linear;
+    width: ${width}px;
+    height: ${height}px;
+    display: block;
+  `}
+`
