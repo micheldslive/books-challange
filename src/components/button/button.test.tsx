@@ -1,4 +1,4 @@
-import { theme } from '@/styles/theme'
+import { theme } from '@/styles'
 
 import { Button } from '.'
 import { renderWithTheme } from '@/core/utils/tests'

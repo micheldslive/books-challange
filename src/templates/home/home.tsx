@@ -1,13 +1,15 @@
 import { Logo, Pagination } from '@/components'
 import { ListBooks } from '@/components/list-books'
 import * as S from './home.styles'
+import { Loading, LoadingContent } from '@/styles'
 import LogoutIcon from '@/public/icons/logout-icon.svg'
 import { useBooks } from '@/core/uses'
 import { useLoginStore } from '@/core/stores'
 
 export const Home = () => {
   const { data, signOut } = useLoginStore()
-  const { books, page, setPage } = useBooks()
+  const { books, page, setPage, isLoading } = useBooks()
+
   const handleNextPage = () => setPage(page + 1)
   const handlePrevPage = () => setPage(page - 1)
 
@@ -31,6 +33,11 @@ export const Home = () => {
         </S.Header>
 
         <S.CardsContainer>
+          {isLoading && (
+            <LoadingContent>
+              <Loading width={50} height={50} border={8} />
+            </LoadingContent>
+          )}
           {books && <ListBooks books={books.data} />}
         </S.CardsContainer>
 
