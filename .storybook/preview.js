@@ -1,7 +1,7 @@
 import { RouterContext } from 'next/dist/shared/lib/router-context'
 import { themes } from '@storybook/theming'
 import { ThemeProvider } from 'styled-components'
-import GlobalStyles from 'styles/globals'
+import { GlobalStyles } from 'styles/globals'
 import { theme } from 'styles/theme'
 import '../.jest/next-image'
 
