@@ -14,11 +14,9 @@ export type BookProps = {
 
 export interface Paginations {
   page: number
-  totalPages: number
 }
 export interface useBooksProps extends Paginations {
   setPage(page: number): void
-  setTotalPages(totalPages: number): void
 }
 
 export interface getBooksProps extends Paginations {
