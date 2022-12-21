@@ -12,16 +12,18 @@ export type BookProps = {
   published: number
 }
 
+interface TotalPages {
+  totalPages: number
+}
+
 export interface Paginations {
   page: number
-  totalPages: number
 }
 export interface useBooksProps extends Paginations {
   setPage(page: number): void
-  setTotalPages(totalPages: number): void
 }
 
-export interface getBooksProps extends Paginations {
+export interface getBooksProps extends Paginations, TotalPages {
   data: BookProps[] | undefined
 }
 

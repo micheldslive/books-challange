@@ -8,13 +8,6 @@ const useBooksStore = create<useBooksProps>((set) => ({
       ...state,
       page,
     })),
-
-  totalPages: 0,
-  setTotalPages: (totalPages) =>
-    set((state) => ({
-      ...state,
-      totalPages,
-    })),
 }))
 
 export { useBooksStore }
